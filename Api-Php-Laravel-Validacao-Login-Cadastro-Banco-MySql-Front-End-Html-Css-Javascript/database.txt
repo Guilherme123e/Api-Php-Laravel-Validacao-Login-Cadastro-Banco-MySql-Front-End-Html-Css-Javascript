@@ -1,0 +1,21 @@
+CREATE DATABASE loginbase;
+
+create table usuarios(
+    
+    id int AUTO_INCREMENT PRIMARY KEY,
+    
+    nome varchar(100) NOT NULL,
+    cpf varchar (11) NOT NULL UNIQUE,
+    rg varchar(20) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    
+    endereco varchar(200) NOT NULL,
+    telefone varchar(20) NOT NULL,   
+    
+    email varchar(100) NOT NULL UNIQUE,
+    senha_hash varchar(255) NOT NULL,
+    
+    genero ENUM('masculino', 'feminino', 'outro') NOT NULL,
+    
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
